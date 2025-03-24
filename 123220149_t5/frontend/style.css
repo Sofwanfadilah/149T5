@@ -1,0 +1,252 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Note Form Styles */
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-form input, .note-form textarea, .note-form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.note-form input:focus, .note-form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+    outline: none;
+}
+
+.note-form textarea {
+    resize: vertical;
+    height: 80px; /* Kolom catatan lebih kecil */
+    width: 100%;
+}
+
+.note-form button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.note-form button:hover {
+    background-color: #2575fc;
+}
+
+/* Notes List Styles */
+.notes-list {
+    margin-top: 20px;
+}
+
+.note-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.note-item .note-content {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.note-item .note-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.note-item .note-widgets {
+    display: flex;
+    gap: 10px;
+}
+
+.note-item .note-widget {
+    width: 100px; /* Lebar widget lebih kecil */
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.note-item .note-widget h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+.note-item .note-widget p {
+    font-size: 10px;
+    color: #777;
+    margin: 0;
+}
+
+.note-item .note-widget .widget-time {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6a11cb;
+}
+
+.note-item .note-widget .widget-quote {
+    font-style: italic;
+    color: #444;
+}
+
+.note-item .note-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.note-item .note-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.note-item .note-actions .edit-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.note-item .note-actions .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.note-item .note-actions .delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.note-item .note-actions .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.edit-note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-note-form input, .edit-note-form textarea, .edit-note-form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.edit-note-form input:focus, .edit-note-form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+    outline: none;
+}
+
+.edit-note-form textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.edit-note-form button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.edit-note-form button:hover {
+    background-color: #2575fc;
+}
