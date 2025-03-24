@@ -1,0 +1,30 @@
+### Get all notes
+GET http://localhost:5001
+###
+
+### Get a specific note by ID
+GET http://localhost:5001/1
+###
+
+### Create a new note
+POST http://localhost:5001
+Content-Type: application/json
+
+{
+  "name": "Bale",
+  "catatan": "First Note",
+  "date": "2023-10-01"
+}
+
+### Update a note by ID
+PATCH http://localhost:5001
+Content-Type: application/json
+
+{
+  "name": "Bale Updated",
+  "catatan": "Note update",
+  "date": "2023-10-02"
+}
+
+### Delete a note by ID
+DELETE http://localhost:5001/1
