@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const BASE_URL = 'http://localhost:5000'; // Sesuaikan dengan URL API Anda
+    const BASE_URL = 'https://notes-be149-925262513273.us-central1.run.app/notes'; // Sesuaikan dengan URL API Anda
     const noteForm = document.getElementById('noteForm');
     const notesList = document.getElementById('notesList');
     const editModal = document.getElementById('editModal');
