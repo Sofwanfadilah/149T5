@@ -3,13 +3,19 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Mar 2025 pada 15.22
+-- Waktu pembuatan: 20 Apr 2025 pada 18.34
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+-- Gunakan database yang sesuai
+CREATE DATABASE IF NOT EXISTS notes_db;
+USE notes_db;
+
+-- Pastikan tabel tidak ada sebelum dibuat
+DROP TABLE IF EXISTS notes;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,7 +24,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `notedb`
+-- Database: `notes_db`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +36,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `notes` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `catatan` varchar(255) DEFAULT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `judul` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
@@ -40,8 +47,8 @@ CREATE TABLE `notes` (
 -- Dumping data untuk tabel `notes`
 --
 
-INSERT INTO `notes` (`id`, `name`, `catatan`, `date`, `createdAt`, `updatedAt`) VALUES
-(2, 'sofwan fadilah', 'anjay ', '2025-03-24 00:00:00', '2025-03-24 14:02:58', '2025-03-24 14:02:58');
+INSERT INTO `notes` (`id`, `name`, `note`, `judul`, `date`, `createdAt`, `updatedAt`) VALUES
+(1, 'sofwan ', 'anjayyyy', 'entah', '2025-03-08 00:36:24', '2025-03-07 18:36:24', '2025-03-07 18:36:24');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +68,7 @@ ALTER TABLE `notes`
 -- AUTO_INCREMENT untuk tabel `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
