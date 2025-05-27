@@ -1,30 +1,52 @@
-### Get all notes
-GET http://localhost:5001
+GET http://localhost:5000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzQ4MTY3MTQ3LCJleHAiOjE3NDgxNzA3NDd9.Y_0u8PEx8GdgLqUJL5uTBR_cvzsEyieJ1eYHAuZ9Cb0
+
 ###
 
-### Get a specific note by ID
-GET http://localhost:5001/1
-###
-
-### Create a new note
-POST http://localhost:5001
+POST http://localhost:5000/add-note 
 Content-Type: application/json
 
 {
-  "name": "Bale",
-  "catatan": "First Note",
-  "date": "2023-10-01"
+    "nama": "tes",
+    "isi": "aku capek mau bobok plis mas nanti masih kelas ekonomi, tapi ya gimana lagi"
 }
 
-### Update a note by ID
-PATCH http://localhost:5001
+### 
+
+PUT http://localhost:5000/edit-note/1
 Content-Type: application/json
 
 {
-  "name": "Bale Updated",
-  "catatan": "Note update",
-  "date": "2023-10-02"
+    "nama": "peler",
+    "isi": "tapi ya gimana lagi"
 }
 
-### Delete a note by ID
-DELETE http://localhost:5001/1
+###
+
+DELETE http://localhost:5000/delete-note/17
+
+###
+
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin4",
+  "password": "123456"
+}
+
+####
+
+POST https://notes-be148-870764645625.us-central1.run.app/login
+Content-Type: application/json
+
+{
+  "username": "admin4",
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:5000/users
+

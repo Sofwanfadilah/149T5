@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>123220149 - sofwan</title>
+    <title>123220149 - Sofwan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>catatan</h1>
-        <form id="noteForm" class="note-form">
-            <input type="text" id="name" placeholder="nama" required>
-            <textarea id="catatan" placeholder="tulis catatan..." required></textarea>
-            <input type="date" id="date" required>
-            <button type="submit">masukan catatan</button>
+        <h1 id="formTitle">Login</h1>
+        <form id="authForm" class="auth-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
         </form>
+        <p id="toggleText">Don't have an account? <a href="#" id="toggleForm">Register here</a></p>
+    </div>
+
+    <!-- Halaman Catatan setelah Login -->
+    <div id="notesPage" class="container" style="display: none;">
+        <h1>Catatan</h1>
+        <form id="noteForm" class="note-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <textarea id="catatan" placeholder="Tulis catatan..." required></textarea>
+            <input type="date" id="date" required>
+            <button type="submit">Masukkan Catatan</button>
+        </form>
+
         <div id="notesList" class="notes-list"></div>
     </div>
 
-    <!-- Modal untuk Edit -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Edit catatan</h2>
-            <form id="editNoteForm" class="edit-note-form">
-                <input type="text" id="editName" placeholder="nama" required>
-                <textarea id="editCatatan" placeholder="tulis catatan" required></textarea>
-                <input type="date" id="editDate" required>
-                <button type="submit">simpan</button>
-            </form>
-        </div>
-    </div>
-    <script src="utils.js"></script>
-    <script src="script.js"></script>
+    <script src="utils.js"></script> <!-- Menyertakan utils.js -->
+    <script src="script.js"></script> <!-- Menyertakan script.js -->
 </body>
 </html>
